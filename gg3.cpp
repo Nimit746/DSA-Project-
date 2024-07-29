@@ -60,9 +60,44 @@ void saveToFile(const vector<Contact>& contacts) {
     file.close();
 }
 
+void loadFromFile(vector<Contact>& contacts) {
+    ifstream file("contacts.txt");
+    if (!file.is_open()) return;
+    string line;
+    while (getline(file, line)) {
+        size_t commaPos = line.find(',');
+        if (commaPos != string::npos) {
+            string name = line.substr(0, commaPos);
+            string phoneNumber = line.substr(commaPos + 1);
+            Contact contact = {name, phoneNumber};
+            contacts.push_back(contact);
+        }
+    }
+    file.close();
+}
+
+void displayFileContents() {
+    ifstream file("contacts.txt");
+    if (!file.is_open()) {
+        cout << "File not found or unable to open." << endl;
+        return;
+    }
+    string line;
+    bool isEmpty = true;
+    while (getline(file, line)) {
+        cout << line << endl;
+        isEmpty = false;
+    }
+    if (isEmpty) {
+        cout << "File is empty." << endl;
+    }
+    file.close();
+}
+
 int main() {
     system("cls");
     vector<Contact> contacts;
+    loadFromFile(contacts);
     string phoneNumber;
     string name;
     int choice;
@@ -96,10 +131,12 @@ int main() {
                 break;
 
             case 2:
-                // Print all contacts
-                cout << "All contacts:" << endl;
-                for (const Contact& contact : contacts) {
-                    cout << contact.name << ": " << contact.phoneNumber << endl;
+                if (contacts.empty()) {
+                    cout << "No contacts available." << endl;
+                } else {
+                    for (const Contact& contact : contacts) {
+                        cout << contact.name << ": " << contact.phoneNumber << endl;
+                    }
                 }
                 break;
 

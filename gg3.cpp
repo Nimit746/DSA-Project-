@@ -108,7 +108,7 @@ int main() {
     while (true) {
         cout << "1. Add number" << endl;
         cout << "2. View numbers" << endl;
-        cout << "3. Remove duplicates" << endl;
+        cout << "3. Merge the Contacts" << endl;
         cout << "4. Save and Exit" << endl;
         cout << "5. Remove a number" << endl;
         cout << "6. Search a number" << endl;

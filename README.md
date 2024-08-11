@@ -1,6 +1,6 @@
 # Contact Management System in C++
 
-* This C++ code implements a simple contact management system that allows users to add, view, remove duplicates, save, and exit the program. The system uses a Contact struct to represent individual contacts, which consist of a name and a phoneNumber.
+* This C++ code implements a simple contact management system that allows users to add, view, merge, save, and exit the program. The system uses a Contact struct to represent individual contacts, which consist of a name and a phoneNumber.
 
  Key Features:
 
@@ -9,12 +9,13 @@
 3. Remove Duplicates: The system can remove duplicate contacts based on phone numbers.
 4. Save and Exit: Users can save all contacts to a file named "contacts.txt" and exit the program.
 5. Remove a Contact: Users can remove a specific contact by entering the corresponding phone number.
-6. Exit without Saving: Users can exit the program without saving any changes.
+6. Search Contact: Users can search the contact by entering the name of the person.
+7. Exit without Saving: Users can exit the program without saving any changes.
 
 Implementation Details: 
 
 1. The Contact struct represents individual contacts with name and phoneNumber members.
-2. The Solution class provides a removeDuplicates function to remove duplicate contacts from a vector of contacts.
+2. The Solution class provides a removeDuplicates function to remove duplicate contacts from a vector of contacts and a searchContact function to search a contact from a vector .
 3. The saveToFile function saves all contacts to a file named "contacts.txt".
 4. The main function implements the program's menu-driven interface, allowing users to interact with the contact management system.
 
@@ -23,6 +24,7 @@ Helper Functions:
 1. selectRandomName: a function to select a random name from a vector of names (not used in this implementation).
 2. removeDuplicates: a function to remove duplicate contacts from a vector of contacts.
 3. saveToFile: a function to save all contacts to a file named "contacts.txt".
+4. searchContact: a function to search a contact from a vector of names 
 
 Notes:
 

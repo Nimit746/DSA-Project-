@@ -13,7 +13,7 @@ struct Contact {
 class Solution {
 public:
     // Function to remove duplicate contacts
-    vector<Contact> removeDuplicates(vector<Contact>& contacts) {
+    vector<Contact> mergeContacts(vector<Contact>& contacts) {
         vector<Contact> uniqueContacts;
         if (!contacts.empty()) {
             uniqueContacts.push_back(contacts[0]);
@@ -147,7 +147,7 @@ int main() {
             
         case 3:
             // Remove duplicates
-            contacts = solution.removeDuplicates(contacts);
+            contacts = solution.mergeContacts(contacts);
             cout << "Unique contacts:" << endl;
             for (const Contact &contact : contacts) {
                 cout << contact.name << ": " << contact.phoneNumber << endl;
